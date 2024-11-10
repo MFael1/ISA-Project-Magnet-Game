@@ -4,6 +4,8 @@ const string WHITE = "\033[37mO\033[0m";
 const string GRAY = "\033[90mO\033[0m";
 const string RED = "\033[91mO\033[0m";
 const string PURPLE = "\033[95mO\033[0m";
+const string SRED = "\033[91m@\033[0m";
+const string SPURPLE = "\033[95m@\033[0m";
 const string EMPTY = ".";
 void resetColor()
 {
@@ -57,10 +59,16 @@ void display(vector<vector<int>> &v)
                 cout << "| " << GRAY << " ";
                 break;
             case 3:
-                cout << "| " << RED << " ";
+                cout << "| " << PURPLE << " ";
                 break;
             case 4:
-                cout << "| " << PURPLE << " ";
+                cout << "| " << RED << " ";
+                break;
+            case 13:
+                cout << "| " << SPURPLE << " ";
+                break;
+            case 14:
+                cout << "| " << SRED << " ";
                 break;
             default:
                 cout << "| " << EMPTY << " ";
@@ -71,6 +79,18 @@ void display(vector<vector<int>> &v)
         cout << shifting() << string(width * 4, '-') << "\n";
     }
     cout << "\n";
+}
+
+void displayByNumbers(vector<vector<int>> &v)
+{
+    for (int i = 0; i < v.size(); ++i)
+    {
+        for (int j = 0; j < v[0].size(); ++j)
+        {
+            cout << v[i][j] << ' ';
+        }
+        cout << '\n';
+    }
 }
 
 bool isValidPos(int x, int y, int val = 0)

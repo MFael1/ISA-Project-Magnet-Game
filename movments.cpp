@@ -16,7 +16,7 @@ bool move(int x1, int y1, int x2, int y2, vector<vector<int>> &v)
         }
         else
         {
-            int temp = v[x1][y1] - 10;
+            int temp = v[x1][y1] % 10;
             v[x1][y1] = 1;
             v[x2][y2] = 10 + temp;
         }
@@ -30,7 +30,7 @@ bool move(int x1, int y1, int x2, int y2, vector<vector<int>> &v)
         }
         else
         {
-            v[x2][y2] = v[x1][y1];
+            v[x2][y2] = v[x1][y1] % 10;
             v[x1][y1] = 1;
         }
     }

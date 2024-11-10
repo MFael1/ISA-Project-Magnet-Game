@@ -73,9 +73,9 @@ int main()
     }
 }
 
-// int main()
-// {
-//     display(LEVELS[2]);
-//     solveGame(LEVELS[2]);
-//     return 0;
-// }
+int main()
+{
+    display(LEVELS[2]);
+    solveGame(LEVELS[2]);
+    return 0;
+}
